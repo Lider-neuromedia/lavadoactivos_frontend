@@ -10,12 +10,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { RestartDialogComponent } from './restart-dialog/restart-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { LoginComponent } from './login/login.component';
+import { GameComponent } from './game/game.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GameCardComponent,
-    RestartDialogComponent
+    RestartDialogComponent,
+    LoginComponent,
+    GameComponent
   ],
   imports: [
     BrowserModule,
