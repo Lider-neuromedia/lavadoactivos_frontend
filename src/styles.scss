@@ -56,6 +56,149 @@ a:hover{
     }
 }
 @media (min-width: 320px){
+    .juego{
+        .grid{
+            z-index: 2;
+        }
+        position: relative;
+        .good{
+            position: absolute;
+            bottom: 2rem;
+            left: 0rem;
+            z-index: 1;
+        }
+        .bad{
+            position: absolute;
+            bottom: 2rem;
+            right: 14rem;
+            z-index: 1;
+        }
+        .logo{
+            width: 25%;
+        }
+        .titulo{
+            width: 55%;
+        }
+        .pe-1{
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translate(0%, -50%);
+            width: 5%;
+        }
+        .pe-2{
+            position: absolute;
+            top: 12rem;
+            right: 4rem;
+            transform: translate(-0%, -0%);
+            width: 3%;
+        }
+        .pe-3{
+            position: absolute;
+            top: 18rem;
+            right: 15rem;
+            transform: translate(-0%, -0%);
+            width: 5%;
+        }
+        .pe-4{
+            position: absolute;
+            top: 0%;
+            right: 0;
+            transform: translate(0%, -0%);
+            width: 8%;
+        }
+        .pe-5{
+            position: absolute;
+            top: 10rem;
+            right: 36rem;
+            transform: translate(-0%, -0%);
+            width: 6%;
+        }
+        .pe-6{
+            position: absolute;
+            top: 4rem;
+            right: 36rem;
+            transform: translate(-0%, -0%);
+            width: 3%;
+        }
+        .pe-7{
+            position: absolute;
+            top: 2rem;
+            right: 43rem;
+            transform: translate(-0%, -0%);
+            width: 4%;
+        }
+        .pe-8{
+            position: absolute;
+            top: 17rem;
+            right: 58rem;
+            transform: translate(-0%, -0%);
+            width: 3%;
+        }
+        .pe-9{
+            position: absolute;
+            top: 4rem;
+            right: 60rem;
+            transform: translate(-0%, -0%);
+            width: 4%;
+        }
+        .pe-10{
+            position: absolute;
+            top: 12rem;
+            right: 82rem;
+            transform: translate(-0%, -0%);
+            width: 11%;
+        }
+        .pe-11{
+            position: absolute;
+            top: 11rem;
+            right: 75rem;
+            transform: translate(-0%, -0%);
+            width: 3%;
+        }
+        .pe-12{
+            position: absolute;
+            top: 4rem;
+            right: 75rem;
+            transform: translate(-0%, -0%);
+            width: 5%;
+        }
+        .pe-13{
+            position: absolute;
+            top: 9rem;
+            right: 82rem;
+            transform: translate(-0%, -0%);
+            width: 3%;
+        }
+        .pe-14{
+            position: absolute;
+            top: 8rem;
+            right: 98rem;
+            transform: translate(-0%, -0%);
+            width: 3%;
+        }
+        .pe-15{
+            position: absolute;
+            top: 0rem;
+            left: 0rem;
+            transform: translate(-0%, -0%);
+            width: 8%;
+        }
+        .pe-16{
+            position: absolute;
+            top: 13rem;
+            left: 0rem;
+            transform: translate(-0%, -0%);
+            width: 6%;
+        }
+        .pe-17{
+            position: absolute;
+            bottom: 6rem;
+            left: 3rem;
+            transform: translate(-0%, -0%);
+            width: 4%;
+        }
+    }
     .login{
         position: relative;
         .p-1{
@@ -284,8 +427,169 @@ a:hover{
             color: #fff;
         }
     }
+    .juego{
+        .grid{
+            z-index: 2;
+        }
+        position: relative;
+        .good{
+            position: absolute;
+            bottom: 2rem;
+            left: 0rem;
+            z-index: 1;
+            width: 45%;
+        }
+        .bad{
+            position: absolute;
+            bottom: 2rem;
+            right: 0rem;
+            z-index: 1;
+            width: 25%;
+        }
+        .logo{
+            width: 25%;
+        }
+        .titulo{
+            width: 55%;
+        }
+        .pe-1{
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translate(0%, -50%);
+            width: 5%;
+        }
+        .pe-2{
+            position: absolute;
+            top: 12rem;
+            right: 4rem;
+            transform: translate(-0%, -0%);
+            width: 3%;
+        }
+        .pe-3{
+            position: absolute;
+            top: 8rem;
+            right: 9rem;
+            transform: translate(-0%, -0%);
+            width: 5%;
+        }
+        .pe-4{
+            position: absolute;
+            top: 0%;
+            right: 0;
+            transform: translate(0%, -0%);
+            width: 8%;
+        }
+        .pe-5{
+            position: absolute;
+            top: 7rem;
+            right: 13rem;
+            transform: translate(-0%, -0%);
+            width: 6%;
+        }
+        .pe-6{
+            position: absolute;
+            top: 4rem;
+            right: 16rem;
+            transform: translate(-0%, -0%);
+            width: 3%;
+        }
+        .pe-7{
+            position: absolute;
+            top: 1rem;
+            right: 20rem;
+            transform: translate(-0%, -0%);
+            width: 4%;
+        }
+        .pe-8{
+            position: absolute;
+            top: 17rem;
+            right: 58rem;
+            transform: translate(-0%, -0%);
+            width: 3%;
+        }
+        .pe-9{
+            position: absolute;
+            top: 1rem;
+            right: 36rem;
+            transform: translate(-0%, -0%);
+            width: 4%;
+        }
+        .pe-10{
+            position: absolute;
+            top: 9rem;
+            right: 62rem;
+            transform: translate(-0%, -0%);
+            width: 11%;
+        }
+        .pe-11{
+            position: absolute;
+            top: 7rem;
+            right: 43rem;
+            transform: translate(-0%, -0%);
+            width: 3%;
+        }
+        .pe-12{
+            position: absolute;
+            top: 1rem;
+            right: 45rem;
+            transform: translate(-0%, -0%);
+            width: 5%;
+        }
+        .pe-13{
+            position: absolute;
+            top: 7rem;
+            right: 50rem;
+            transform: translate(-0%, -0%);
+            width: 3%;
+        }
+        .pe-14{
+            position: absolute;
+            top: 8rem;
+            right: 55rem;
+            transform: translate(-0%, -0%);
+            width: 3%;
+        }
+        .pe-15{
+            position: absolute;
+            top: 0rem;
+            left: 0rem;
+            transform: translate(-0%, -0%);
+            width: 8%;
+        }
+        .pe-16{
+            position: absolute;
+            top: 13rem;
+            left: 0rem;
+            transform: translate(-0%, -0%);
+            width: 6%;
+        }
+        .pe-17{
+            position: absolute;
+            bottom: 6rem;
+            left: 3rem;
+            transform: translate(-0%, -0%);
+            width: 4%;
+        }
+    }
+    .juego{
+        .logo{
+            width: 25%;
+        }
+        .titulo{
+            width: 55%;
+        }
+    }
 }
 @media (min-width: 1024px){
+    .juego{
+        .logo{
+            width: 20%;
+        }
+        .titulo{
+            width: 40%;
+        }
+    }
     .login{
         .p-1{
             bottom: 0;
@@ -396,8 +700,314 @@ a:hover{
             color: #fff;
         }
     }
+    .juego{
+        .grid{
+            z-index: 2;
+        }
+        position: relative;
+        .good{
+            position: absolute;
+            bottom: 2rem;
+            left: 0rem;
+            z-index: 1;
+            width: 30%;
+        }
+        .bad{
+            position: absolute;
+            bottom: 2rem;
+            right: 0rem;
+            z-index: 1;
+            width: 18%;
+        }
+        .logo{
+            width: 25%;
+        }
+        .titulo{
+            width: 55%;
+        }
+        .pe-1{
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translate(0%, -50%);
+            width: 5%;
+        }
+        .pe-2{
+            position: absolute;
+            top: 12rem;
+            right: 4rem;
+            transform: translate(-0%, -0%);
+            width: 3%;
+        }
+        .pe-3{
+            position: absolute;
+            top: 8rem;
+            right: 9rem;
+            transform: translate(-0%, -0%);
+            width: 5%;
+        }
+        .pe-4{
+            position: absolute;
+            top: 0%;
+            right: 0;
+            transform: translate(0%, -0%);
+            width: 8%;
+        }
+        .pe-5{
+            position: absolute;
+            top: 7rem;
+            right: 17rem;
+            transform: translate(-0%, -0%);
+            width: 6%;
+        }
+        .pe-6{
+            position: absolute;
+            top: 4rem;
+            right: 16rem;
+            transform: translate(-0%, -0%);
+            width: 3%;
+        }
+        .pe-7{
+            position: absolute;
+            top: 1rem;
+            right: 20rem;
+            transform: translate(-0%, -0%);
+            width: 4%;
+        }
+        .pe-8{
+            position: absolute;
+            top: 17rem;
+            right: 58rem;
+            transform: translate(-0%, -0%);
+            width: 3%;
+        }
+        .pe-9{
+            position: absolute;
+            top: 1rem;
+            right: 36rem;
+            transform: translate(-0%, -0%);
+            width: 4%;
+        }
+        .pe-10{
+            position: absolute;
+            top: 9rem;
+            right: 62rem;
+            transform: translate(-0%, -0%);
+            width: 11%;
+        }
+        .pe-11{
+            position: absolute;
+            top: 7rem;
+            right: 43rem;
+            transform: translate(-0%, -0%);
+            width: 3%;
+        }
+        .pe-12{
+            position: absolute;
+            top: 1rem;
+            right: 45rem;
+            transform: translate(-0%, -0%);
+            width: 5%;
+        }
+        .pe-13{
+            position: absolute;
+            top: 7rem;
+            right: 50rem;
+            transform: translate(-0%, -0%);
+            width: 3%;
+        }
+        .pe-14{
+            position: absolute;
+            top: 8rem;
+            right: 55rem;
+            transform: translate(-0%, -0%);
+            width: 3%;
+        }
+        .pe-15{
+            position: absolute;
+            top: 0rem;
+            left: 0rem;
+            transform: translate(-0%, -0%);
+            width: 8%;
+        }
+        .pe-16{
+            position: absolute;
+            top: 13rem;
+            left: 0rem;
+            transform: translate(-0%, -0%);
+            width: 6%;
+        }
+        .pe-17{
+            position: absolute;
+            bottom: 6rem;
+            left: 3rem;
+            transform: translate(-0%, -0%);
+            width: 4%;
+        }
+    }
+    .juego{
+        .logo{
+            width: 18%;
+        }
+        .titulo{
+            width: 40%;
+        }
+    }
 }
 @media (min-width: 1280px){
+    .juego{
+        .grid{
+            z-index: 2;
+        }
+        position: relative;
+        .good{
+            position: absolute;
+            bottom: 2rem;
+            left: 0rem;
+            z-index: 1;
+            width: 30%;
+        }
+        .bad{
+            position: absolute;
+            bottom: 2rem;
+            right: 5rem;
+            z-index: 1;
+            width: 18%;
+        }
+        .logo{
+            width: 25%;
+        }
+        .titulo{
+            width: 55%;
+        }
+        .pe-1{
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translate(0%, -50%);
+            width: 5%;
+        }
+        .pe-2{
+            position: absolute;
+            top: 12rem;
+            right: 4rem;
+            transform: translate(-0%, -0%);
+            width: 3%;
+        }
+        .pe-3{
+            position: absolute;
+            top: 10rem;
+            right: 15rem;
+            transform: translate(-0%, -0%);
+            width: 5%;
+        }
+        .pe-4{
+            position: absolute;
+            top: 0%;
+            right: 0;
+            transform: translate(0%, -0%);
+            width: 8%;
+        }
+        .pe-5{
+            position: absolute;
+            top: 8rem;
+            right: 28rem;
+            transform: translate(-0%, -0%);
+            width: 6%;
+        }
+        .pe-6{
+            position: absolute;
+            top: 4rem;
+            right: 28rem;
+            transform: translate(-0%, -0%);
+            width: 3%;
+        }
+        .pe-7{
+            position: absolute;
+            top: 0rem;
+            right: 32rem;
+            transform: translate(-0%, -0%);
+            width: 4%;
+        }
+        .pe-8{
+            position: absolute;
+            top: 17rem;
+            right: 58rem;
+            transform: translate(-0%, -0%);
+            width: 3%;
+        }
+        .pe-9{
+            position: absolute;
+            top: 1rem;
+            right: 45rem;
+            transform: translate(-0%, -0%);
+            width: 4%;
+        }
+        .pe-10{
+            position: absolute;
+            top: 9rem;
+            right: 62rem;
+            transform: translate(-0%, -0%);
+            width: 11%;
+        }
+        .pe-11{
+            position: absolute;
+            top: 8rem;
+            right: 58rem;
+            transform: translate(-0%, -0%);
+            width: 3%;
+        }
+        .pe-12{
+            position: absolute;
+            top: 1rem;
+            right: 58rem;
+            transform: translate(-0%, -0%);
+            width: 5%;
+        }
+        .pe-13{
+            position: absolute;
+            top: 9rem;
+            right: 82rem;
+            transform: translate(-0%, -0%);
+            width: 3%;
+        }
+        .pe-14{
+            position: absolute;
+            top: 8rem;
+            right: 98rem;
+            transform: translate(-0%, -0%);
+            width: 3%;
+        }
+        .pe-15{
+            position: absolute;
+            top: 0rem;
+            left: 0rem;
+            transform: translate(-0%, -0%);
+            width: 8%;
+        }
+        .pe-16{
+            position: absolute;
+            top: 13rem;
+            left: 0rem;
+            transform: translate(-0%, -0%);
+            width: 6%;
+        }
+        .pe-17{
+            position: absolute;
+            bottom: 6rem;
+            left: 3rem;
+            transform: translate(-0%, -0%);
+            width: 4%;
+        }
+    }
+    .juego{
+        .logo{
+            width: 18%;
+        }
+        .titulo{
+            width: 40%;
+        }
+    }
     .login-main-text{
         h2{
             font-size: 8rem;
@@ -426,6 +1036,157 @@ a:hover{
     }
 }
 @media (min-width: 1920px){
+    .juego{
+        .grid{
+            z-index: 2;
+        }
+        position: relative;
+        .good{
+            position: absolute;
+            bottom: 2rem;
+            left: 0rem;
+            z-index: 1;
+        }
+        .bad{
+            position: absolute;
+            bottom: 2rem;
+            right: 14rem;
+            z-index: 1;
+        }
+        .logo{
+            width: 25%;
+        }
+        .titulo{
+            width: 55%;
+        }
+        .pe-1{
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translate(0%, -50%);
+            width: 5%;
+        }
+        .pe-2{
+            position: absolute;
+            top: 12rem;
+            right: 4rem;
+            transform: translate(-0%, -0%);
+            width: 3%;
+        }
+        .pe-3{
+            position: absolute;
+            top: 18rem;
+            right: 15rem;
+            transform: translate(-0%, -0%);
+            width: 5%;
+        }
+        .pe-4{
+            position: absolute;
+            top: 0%;
+            right: 0;
+            transform: translate(0%, -0%);
+            width: 8%;
+        }
+        .pe-5{
+            position: absolute;
+            top: 10rem;
+            right: 36rem;
+            transform: translate(-0%, -0%);
+            width: 6%;
+        }
+        .pe-6{
+            position: absolute;
+            top: 4rem;
+            right: 36rem;
+            transform: translate(-0%, -0%);
+            width: 3%;
+        }
+        .pe-7{
+            position: absolute;
+            top: 2rem;
+            right: 43rem;
+            transform: translate(-0%, -0%);
+            width: 4%;
+        }
+        .pe-8{
+            position: absolute;
+            top: 17rem;
+            right: 58rem;
+            transform: translate(-0%, -0%);
+            width: 3%;
+        }
+        .pe-9{
+            position: absolute;
+            top: 4rem;
+            right: 60rem;
+            transform: translate(-0%, -0%);
+            width: 4%;
+        }
+        .pe-10{
+            position: absolute;
+            top: 12rem;
+            right: 82rem;
+            transform: translate(-0%, -0%);
+            width: 11%;
+        }
+        .pe-11{
+            position: absolute;
+            top: 11rem;
+            right: 75rem;
+            transform: translate(-0%, -0%);
+            width: 3%;
+        }
+        .pe-12{
+            position: absolute;
+            top: 4rem;
+            right: 75rem;
+            transform: translate(-0%, -0%);
+            width: 5%;
+        }
+        .pe-13{
+            position: absolute;
+            top: 9rem;
+            right: 82rem;
+            transform: translate(-0%, -0%);
+            width: 3%;
+        }
+        .pe-14{
+            position: absolute;
+            top: 8rem;
+            right: 98rem;
+            transform: translate(-0%, -0%);
+            width: 3%;
+        }
+        .pe-15{
+            position: absolute;
+            top: 0rem;
+            left: 0rem;
+            transform: translate(-0%, -0%);
+            width: 8%;
+        }
+        .pe-16{
+            position: absolute;
+            top: 13rem;
+            left: 0rem;
+            transform: translate(-0%, -0%);
+            width: 6%;
+        }
+        .pe-17{
+            position: absolute;
+            bottom: 6rem;
+            left: 3rem;
+            transform: translate(-0%, -0%);
+            width: 4%;
+        }
+    }
+    .juego{
+        .logo{
+            width: 25%;
+        }
+        .titulo{
+            width: 60%;
+        }
+    }
     .login{
         .p-1{
             bottom: 0;

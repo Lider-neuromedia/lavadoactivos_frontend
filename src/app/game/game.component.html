@@ -1,12 +1,33 @@
-<mat-toolbar color="primary" class="text-center">
-    Card Memory Game
-  </mat-toolbar>
-  <div class="p-16">
-    <p class="text-center">Tap on a card to flip it. You can only flip a maximum of two cards at a time. A match will
-      remove
-      those cards!</p>
-    <div class="grid p-16">
-      <app-game-card *ngFor="let c of cards; let idx=index" [data]="c" (cardClicked)="cardClicked(idx)">
-      </app-game-card>
-    </div>
-</div>
+<section class="juego container-fluid h-100" style="background: url(./assets/juego/fondo-juego.png);background-repeat: no-repeat;background-size: cover;">
+  <div class="row h-100 d-flex justify-content-center align-items-center">
+      <!-- <mat-toolbar color="primary" class="text-center">
+      </mat-toolbar> -->
+      <div class="d-flex justify-content-center align-items-center flex-column">
+        <img src="./assets/juego/titulo.png" alt="titulo" class="titulo">
+        <div class="grid pb-2">
+          <app-game-card *ngFor="let c of cards; let idx=index" [data]="c" (cardClicked)="cardClicked(idx)">
+          </app-game-card>
+        </div>
+        <img src="./assets/logo.png" alt="logo" class="logo">
+      </div>
+  </div>
+  <img src="./assets/juego/bad.png" alt="" class="bad">
+  <img src="./assets/juego/good.png" alt="" class="good">
+  <img src="./assets/juego/p-1.png" alt="" class="pe-1">
+  <img src="./assets/juego/p-2.png" alt="" class="pe-2">
+  <img src="./assets/juego/p-3.png" alt="" class="pe-3">
+  <img src="./assets/juego/p-4.png" alt="" class="pe-4">
+  <img src="./assets/juego/p-5.png" alt="" class="pe-5">
+  <img src="./assets/juego/p-6.png" alt="" class="pe-6">
+  <img src="./assets/juego/p-7.png" alt="" class="pe-7">
+  <img src="./assets/juego/p-8.png" alt="" class="pe-8">
+  <img src="./assets/juego/p-9.png" alt="" class="pe-9">
+  <img src="./assets/juego/p-10.png" alt="" class="pe-10">
+  <img src="./assets/juego/p-11.png" alt="" class="pe-11">
+  <img src="./assets/juego/p-12.png" alt="" class="pe-12">
+  <img src="./assets/juego/p-13.png" alt="" class="pe-13">
+  <img src="./assets/juego/p-14.png" alt="" class="pe-14">
+  <img src="./assets/juego/p-15.png" alt="" class="pe-15">
+  <img src="./assets/juego/p-16.png" alt="" class="pe-16">
+  <img src="./assets/juego/p-17.png" alt="" class="pe-17">
+</section>

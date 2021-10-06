@@ -17,7 +17,14 @@ export class GameComponent implements OnInit {
     'imagen2.jpg',
     'imagen3.jpg',
     'imagen4.jpg',
-    'imagen5.jpg'
+    'imagen5.jpg',
+    'imagen1.jpg',
+    'imagen2.jpg',
+    'imagen3.jpg',
+    'imagen4.jpg',
+    'imagen5.jpg',
+    'imagen3.jpg',
+    'imagen4.jpg',
   ];
 
   cards: CardData[] = [];
