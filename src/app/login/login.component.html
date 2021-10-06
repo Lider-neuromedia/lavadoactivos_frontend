@@ -1,37 +1,81 @@
-<section class="container-fluid h-100">
-    <div class="row">
-        <div class="col-sm-12 col-md-6">
-            <div class="login-main-text">
-                <h2>Application<br> Login Page</h2>
-                <p>Login or register from here to access.</p>
+<section class="login container-fluid h-100" style="background: url(./assets/login/background-full.png);background-repeat: no-repeat;background-size: cover;">
+    <div class="row h-100">
+        <div class="px-5 col-sm-12 col-md-6 h-100 d-flex justify-content-center align-items-center">
+            <div class="login-main-text d-flex justify-content-right text-align-items flex-column">
+                <h2>BIEN<br>VENIDO</h2>
+                <div class="caption d-flex justify-content-center align-items-center mx-5">
+                    <img src="./assets/login/personajeBueno-login.png" class="good">
+                    <img src="./assets/logo.png" class="logo">
+                </div>
              </div>
         </div>
-        <div class="col-sm-12 col-md-6">
+        <div class="content-form col-sm-12 col-md-6 h-100 d-flex justify-content-center align-items-center" style="background: url(./assets/login/background-right.png);background-repeat: no-repeat;background-size: cover;">
             <div class="login-form">
+                <img class="bad" src="./assets/login/personajeMalo-login.png">
+                <div class="container-circle d-flex justify-content-center align-items-center flex-column">
+                    <h2>Comenzar</h2>
+                    <div class="rounded-circle d-flex justify-content-center align-items-center">
+                        <i class="far fa-user"></i>
+                    </div>
+                </div>
+                <h2 class="text-center text-gray">Ingresar datos</h2>
                 <form>
-                   <div class="form-group">
-                      <label>User Name</label>
-                      <input type="text" class="form-control" placeholder="User Name">
-                   </div>
-                   <div class="form-group">
-                      <label>Password</label>
-                      <input type="password" class="form-control" placeholder="Password">
-                   </div>
-                   <button type="submit" class="btn btn-black">Login</button>
-                   <button type="submit" class="btn btn-secondary">Register</button>
+                    <label class="sr-only" name="cedula" for="inlineFormInputGroup">Número de cédula</label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="far fa-address-card"></i></div>
+                        </div>
+                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Número de cédula">
+                    </div>
+                    <label class="sr-only" name="nombre" for="inlineFormInputGroup">Nombre completo</label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-user"></i></div>
+                        </div>
+                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Nombre completo">
+                    </div>
+                    <label class="sr-only" name="name" for="inlineFormInputGroup">Correo eletrónico</label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-envelope"></i></div>
+                        </div>
+                        <input type="text" name="celular" class="form-control" id="inlineFormInputGroup" placeholder="Correo eletrónico">
+                    </div>
+                    <label class="sr-only" for="inlineFormInputGroup">Celular</label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-mobile-alt"></i></div>
+                        </div>
+                        <input type="text" name="celular" class="form-control" id="inlineFormInputGroup" placeholder="Celular">
+                    </div>
+                    <label class="sr-only" for="inlineFormInputGroup">Tipo</label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-users"></i></div>
+                        </div>
+                        <select type="text" name="tipo" class="form-control" id="inlineFormInputGroup">
+                            <option value="0">- Seleccione tipo de usuario -</option>
+                            <option value="0">Vendeor</option>
+                            <option value="0">Cliente</option>
+                            <option value="0">Colaborador</option>
+                        </select>
+                    </div>
+                   <button type="submit" class="btn btn-primary w-100">Acceso</button>
                 </form>
-             </div>
+            </div>
+            <img src="./assets/login/p-9.png" class="p-9">
         </div>
     </div>
+    <img src="./assets/login/p-1.png" class="p-1">
+    <img src="./assets/login/p-2.png" class="p-2">
+    <img src="./assets/login/p-3.png" class="p-3">
+    <img src="./assets/login/p-4.png" class="p-4">
+    <img src="./assets/login/p-5.png" class="p-5">
+    <img src="./assets/login/p-6.png" class="p-6">
+    <img src="./assets/login/p-7.png" class="p-7">
+    <img src="./assets/login/p-8.png" class="p-8">
+    <img src="./assets/login/p-10.png" class="p-10">
+    <img src="./assets/login/m-1.png" class="m-1">
+    <img src="./assets/login/m-2.png" class="m-2">
+    <img src="./assets/login/m-3.png" class="m-3">
 </section>
-<!-- <div class="sidenav">
-    <div class="login-main-text">
-       <h2>Application<br> Login Page</h2>
-       <p>Login or register from here to access.</p>
-    </div>
- </div>
- <div class="main">
-    <div class="col-md-6 col-sm-12">
-      
-    </div>
- </div> -->
