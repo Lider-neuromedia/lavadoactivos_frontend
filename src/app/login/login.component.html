@@ -19,45 +19,45 @@
                     </div>
                 </div>
                 <h2 class="text-center text-gray">Ingresar datos</h2>
-                <form>
+                <form [formGroup]="formularioRegistro" (ngSubmit)="guardarRegistro()">
                     <label class="sr-only" name="cedula" for="inlineFormInputGroup">Número de cédula</label>
                     <div class="input-group mb-2">
                         <div class="input-group-prepend">
                         <div class="input-group-text"><i class="far fa-address-card"></i></div>
                         </div>
-                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Número de cédula">
+                        <input type="text" class="form-control" id="inlineFormInputGroup" [class.is-invalid]="Cedula" formControlName="cedula" placeholder="Número de cédula">
                     </div>
                     <label class="sr-only" name="nombre" for="inlineFormInputGroup">Nombre completo</label>
                     <div class="input-group mb-2">
                         <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-user"></i></div>
                         </div>
-                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Nombre completo">
+                        <input type="text" class="form-control" id="inlineFormInputGroup" [class.is-invalid]="Nombre" formControlName="nombre" placeholder="Nombre completo">
                     </div>
                     <label class="sr-only" name="name" for="inlineFormInputGroup">Correo eletrónico</label>
                     <div class="input-group mb-2">
                         <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-envelope"></i></div>
                         </div>
-                        <input type="text" name="celular" class="form-control" id="inlineFormInputGroup" placeholder="Correo eletrónico">
+                        <input type="text" name="celular" class="form-control" id="inlineFormInputGroup" [class.is-invalid]="Correo" formControlName="email" placeholder="Correo eletrónico">
                     </div>
                     <label class="sr-only" for="inlineFormInputGroup">Celular</label>
                     <div class="input-group mb-2">
                         <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-mobile-alt"></i></div>
                         </div>
-                        <input type="text" name="celular" class="form-control" id="inlineFormInputGroup" placeholder="Celular">
+                        <input type="text" name="celular" class="form-control" id="inlineFormInputGroup" [class.is-invalid]="Celular" formControlName="celular" placeholder="Celular">
                     </div>
                     <label class="sr-only" for="inlineFormInputGroup">Tipo</label>
                     <div class="input-group mb-2">
                         <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-users"></i></div>
                         </div>
-                        <select type="text" name="tipo" class="form-control" id="inlineFormInputGroup">
-                            <option value="0">- Seleccione tipo de usuario -</option>
-                            <option value="0">Vendeor</option>
-                            <option value="0">Cliente</option>
-                            <option value="0">Colaborador</option>
+                        <select type="text" name="tipo" class="form-control" [class.is-invalid]="Tipo" formControlName="tipo" id="inlineFormInputGroup">
+                            <option value="">- Seleccione tipo de usuario -</option>
+                            <option value="1">Vendedor</option>
+                            <option value="2">Cliente</option>
+                            <option value="3">Colaborador</option>
                         </select>
                     </div>
                    <button type="submit" class="btn btn-primary w-100">Acceso</button>

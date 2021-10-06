@@ -24,6 +24,7 @@
     "@fortawesome/fontawesome-free": "^5.15.4",
     "bulma": "^0.9.1",
     "rxjs": "~6.5.5",
+    "sweetalert2": "^11.1.7",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
   },
