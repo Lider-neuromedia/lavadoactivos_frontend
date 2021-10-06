@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  urlGlobal: "n1083.pruebasneuro.co"
 };

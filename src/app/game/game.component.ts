@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import Swal from 'sweetalert2';
 import { CardData } from '../card-data.model';
 import { RestartDialogComponent } from '../restart-dialog/restart-dialog.component';
 
@@ -42,6 +43,7 @@ export class GameComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    Swal.fire('Aquí va el video', '', 'success');
     this.setupCards();
   }
 
