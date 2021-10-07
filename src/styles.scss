@@ -21,6 +21,14 @@ a:hover{
     border-color: none !important;
     border-color: #fff !important;
 }
+.swal2-modal{
+    // background: rgb(111,43,213);
+    // background: linear-gradient(0deg, rgba(111,43,213,1) 0%, rgba(0,15,71,1) 100%) !important;
+    background: url('./assets/popup/ventana.png') !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    position: relative;
+}
 .login-form{
     background: rgba(255,255,255,.2);
     padding: 50px;

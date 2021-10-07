@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import Swal from 'sweetalert2';
 import { CardData } from '../card-data.model';
+import { PopupVideoComponent } from '../popup-video/popup-video.component';
 import { RestartDialogComponent } from '../restart-dialog/restart-dialog.component';
 
 @Component({
@@ -38,6 +39,7 @@ export class GameComponent implements OnInit {
   matchedCount = 0;
   movimientos: number = 0;
   desaciertos: number = 0;
+  popup;
 
   shuffleArray(anArray: any[]): any[] {
     return anArray.map(a => [Math.random(), a])
@@ -50,7 +52,10 @@ export class GameComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    Swal.fire('Aquí va el video', '', 'success');
+    // Swal.fire('Aquí va el video', '', 'success');
+    this.dialog.open(RestartDialogComponent, {
+      disableClose: true
+    });
     this.setupCards();
   }
 
