@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import Swal from 'sweetalert2';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-restart-dialog',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RestartDialogComponent implements OnInit {
 
-  constructor() { }
+  mensaje: string = "";
+  constructor(public dialogRef: MatDialogRef<RestartDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any, private authService: AuthService) { }
 
   ngOnInit(): void {
+    this.authService.registrarEstadisiticas(this.data.datosJuego).subscribe(
+      (resp: any) => this.mensaje = resp.message,
+      error => {
+        console.log(error);
+        Swal.fire(error.error.errors.message, '', 'error')
+      });
   }
 
 }

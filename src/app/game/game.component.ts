@@ -2,7 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import Swal from 'sweetalert2';
 import { CardData } from '../card-data.model';
+import { VideoDialogComponent } from '../video-dialog/video-dialog.component';
 import { RestartDialogComponent } from '../restart-dialog/restart-dialog.component';
+import { AuthService } from '../services/auth.service';
+import * as moment from 'moment';
+import { Memoria } from '../interfaces/memoria';
 
 @Component({
   selector: 'app-game',
@@ -38,6 +42,13 @@ export class GameComponent implements OnInit {
   matchedCount = 0;
   movimientos: number = 0;
   desaciertos: number = 0;
+  validadorTiempo: number = 0;
+  datosJuego: Memoria = {
+    movements: 0,
+    bad_movements: 0,
+    start_at: '',
+    end_at: ''
+  };
 
   shuffleArray(anArray: any[]): any[] {
     return anArray.map(a => [Math.random(), a])
@@ -45,54 +56,16 @@ export class GameComponent implements OnInit {
       .map(a => a[1]);
   }
 
-  constructor(private dialog: MatDialog) {
+  constructor(private dialog: MatDialog, private authService: AuthService) {
 
   }
 
   ngOnInit(): void {
-    Swal.fire('Aquí va el video', '', 'success');
+    this.dialog.open(VideoDialogComponent);
     this.setupCards();
   }
 
-  tiempoJuego(){
-    this.intervalo = setInterval(() => {
-      
-      if(this.minutos === 0){
-        this.minutosString = '0'+this.minutos;
-      }
-
-      if(this.segundos === 60 && this.minutos < 10){
-        // Con 0 despues de los 60 segundos
-        this.minutos++;
-        this.minutosString = '0'+this.minutos;
-        this.segundos = 0;
-      }else if(this.segundos === 60 && this.minutos > 9){
-        // Sin 0 despues de los 60 segundos
-        this.minutos++;
-        this.minutosString = this.minutos.toString();
-        this.segundos = 0;
-      }
-      if(this.minutos === 60){
-        this.minutos = 0;
-      }
-
-      if(this.segundos < 10){
-        // Con 0
-        this.segundosString = '0'+this.segundos;
-        this.segundos++;
-      }else{ 
-      // Sin 0
-      this.segundosString = this.segundos.toString();
-      this.segundos++;
-      }
-      // Tiempo unido
-      this.tiempo = this.minutosString+':'+this.segundosString;
-      console.log(this.tiempo);
-    }, 1000);
-  }
-
   setupCards(): void {
-    this.tiempoJuego();
     this.cards = [];
     this.cardImages.forEach((image) => {
       const cardData: CardData = {
@@ -110,7 +83,11 @@ export class GameComponent implements OnInit {
 
   cardClicked(index: number): void {
     const cardInfo = this.cards[index];
-
+    this.validadorTiempo++;
+    if(this.validadorTiempo === 1){
+      this.datosJuego.start_at = moment(Date()).format("YYYY-MM-DD hh:mm:ss");
+      console.log(moment(Date()).format("YYYY-MM-DD hh:mm:ss"));
+    }
     if (cardInfo.state === 'default' && this.flippedCards.length < 2) {
       cardInfo.state = 'flipped';
       this.flippedCards.push(cardInfo);
@@ -141,9 +118,15 @@ export class GameComponent implements OnInit {
 
         if (this.matchedCount === this.cardImages.length) {
           const dialogRef = this.dialog.open(RestartDialogComponent, {
-            disableClose: true
+            disableClose: true,
+            data: {datosJuego: this.datosJuego}
           });
           clearInterval(this.intervalo);
+          this.datosJuego.movements = this.movimientos;
+          this.datosJuego.bad_movements = this.desaciertos;
+          this.datosJuego.end_at = moment(Date()).format("YYYY-MM-DD hh:mm:ss");
+
+          console.log(moment(Date()).format("YYYY-MM-DD hh:mm:ss"));
           dialogRef.afterClosed().subscribe(() => {
             this.restart();
           });
