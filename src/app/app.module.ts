@@ -15,6 +15,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { LoginComponent } from './login/login.component';
 import { GameComponent } from './game/game.component';
 import { PopupVideoComponent } from './popup-video/popup-video.component';
+import { VideoDialogComponent } from './video-dialog/video-dialog.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PopupVideoComponent } from './popup-video/popup-video.component';
     RestartDialogComponent,
     LoginComponent,
     GameComponent,
-    PopupVideoComponent
+    PopupVideoComponent,
+    VideoDialogComponent
   ],
   imports: [
     BrowserModule,

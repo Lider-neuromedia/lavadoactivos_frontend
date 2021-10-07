@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { GameComponent } from './game/game.component';
 import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
-  { path: 'juego', component: GameComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'juego', component: GameComponent, canActivate: [AuthGuard] },
   { path: '**', pathMatch: 'full', redirectTo: 'login'}
 ];
 
