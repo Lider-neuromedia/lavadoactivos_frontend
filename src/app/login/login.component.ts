@@ -56,8 +56,9 @@ export class LoginComponent implements OnInit {
     Swal.fire('Validando información', 'Espere un momento...', 'info');
     Swal.showLoading()
     this.authService.registrarUsuario(this.formularioRegistro.value).subscribe((resp: any) => {
-      Swal.fire(resp.message, '', 'success').then(() => {
-        this.router.navigateByUrl('./juego');
+      sessionStorage.setItem('token', resp.access_token);
+      Swal.fire('Usuario creado correctamente', '', 'success').then(() => {
+        this.router.navigateByUrl('/juego');
       });
     }, error => {
       console.log(error.error.errors);
