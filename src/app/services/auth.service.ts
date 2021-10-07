@@ -20,4 +20,9 @@ export class AuthService {
     const headers = new HttpHeaders( {'Authorization': `Bearer ${sessionStorage.getItem('token')}`} );
     return this.http.post(`${this.url}/api/game/statistics`, datosJuego, {headers: headers});
   }
+
+  refrescarToken(){
+    const headers = new HttpHeaders( {'Authorization': `Bearer ${sessionStorage.getItem('token')}`} );
+    return this.http.post(`${this.url}/api/auth/refresh`,'',{headers: headers});
+  }
 }
