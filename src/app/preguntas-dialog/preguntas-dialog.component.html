@@ -5,12 +5,69 @@
     </button>
     <img src="./assets/popup/p-1.png" alt="p1-1" class="p1-1">
     <div mat-dialog-content>
-        <p class="text-center">
+        <mat-horizontal-stepper [linear]="true" #stepper>
+            <mat-step [stepControl]="formularioPregunta1">
+                <form [formGroup]="formularioPregunta1">
+                    <div class="form-group">
+                        <h1>{{ formularioPregunta1.get('pregunta').value }}</h1>
+                        <ng-container *ngFor="let opcion of preguntas[0]?preguntas[0].options:''">
+                        <div class="form-check">
+                            <input class="form-check-input" formControlName="respuesta" name="respuesta" type="radio" id="exampleRadios1" [value]="opcion.id">
+                            <label class="form-check-label" for="exampleRadios1">
+                              {{ opcion.description }}
+                            </label>
+                        </div>
+                    </ng-container>
+                    </div>
+                    
+                </form>
+                <div>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </mat-step>
+            <mat-step [stepControl]="formularioPregunta2">
+                <form [formGroup]="formularioPregunta2">
+                    <h1>{{ formularioPregunta2.get('pregunta').value }}</h1>
+                    <ng-container *ngFor="let opcion of preguntas[1]?preguntas[1].options:''">
+                        <div class="form-check">
+                            <input class="form-check-input" formControlName="respuesta" name="respuesta" type="radio" id="exampleRadios1" [value]="opcion.id">
+                            <label class="form-check-label" for="exampleRadios1">
+                              {{ opcion.description }}
+                            </label>
+                        </div>
+                    </ng-container>
+                </form>
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </mat-step>
+            <mat-step [stepControl]="formularioPregunta3">
+                <form [formGroup]="formularioPregunta3">
+                    <h1>{{ formularioPregunta3.get('pregunta').value }}</h1>
+                    <ng-container *ngFor="let opcion of preguntas[2]?preguntas[2].options:''">
+                        <div class="form-check">
+                            <input class="form-check-input" formControlName="respuesta" name="respuesta" type="radio" id="exampleRadios1" [value]="opcion.id">
+                            <label class="form-check-label" for="exampleRadios1">
+                              {{ opcion.description }}
+                            </label>
+                        </div>
+                    </ng-container>
+                </form>
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext (click)="guardarRespuestas()">Next</button>
+                </div>
+            </mat-step>
+            <mat-step>
+                <p class="text-center">
             <img src="./assets/popup/gracias.png" alt="">
         </p>
         <div class="d-flex justify-content-center align-items-center">
             <img src="./assets/popup/head_good.png" alt="" class="px-5 head_good">
             <img src="./assets/popup/head_bad.png" alt="" class="px-5 head_bad">
         </div>
+            </mat-step>
+        </mat-horizontal-stepper>
     </div>
 </div>

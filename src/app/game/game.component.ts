@@ -8,6 +8,7 @@ import { RestartDialogComponent } from '../restart-dialog/restart-dialog.compone
 import { AuthService } from '../services/auth.service';
 import * as moment from 'moment';
 import { Memoria } from '../interfaces/memoria';
+import { PreguntasDialogComponent } from '../preguntas-dialog/preguntas-dialog.component';
 
 @Component({
   selector: 'app-game',
@@ -16,7 +17,7 @@ import { Memoria } from '../interfaces/memoria';
 })
 export class GameComponent implements OnInit, OnDestroy {
 
-  
+
   cardImages = [
     'imagen1.jpg',
     'imagen2.jpg',
@@ -36,7 +37,7 @@ export class GameComponent implements OnInit, OnDestroy {
   flippedCards: CardData[] = [];
   intervalo: number;
   tiempo: string;
-  minutos: number = 0; 
+  minutos: number = 0;
   minutosString: string = "";
   segundos: number = 0;
   segundosString: string = "";
@@ -66,10 +67,6 @@ export class GameComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    // Swal.fire('Aquí va el video', '', 'success');
-    this.dialog.open(RestartDialogComponent, {
-      disableClose: true
-    });
     this.dialog.open(VideoDialogComponent);
     this.setupCards();
   }
@@ -93,7 +90,7 @@ export class GameComponent implements OnInit, OnDestroy {
   cardClicked(index: number): void {
     const cardInfo = this.cards[index];
     this.validadorTiempo++;
-    if(this.validadorTiempo === 1){
+    if (this.validadorTiempo === 1) {
       this.datosJuego.start_at = moment(Date()).format("YYYY-MM-DD hh:mm:ss");
       console.log(moment(Date()).format("YYYY-MM-DD hh:mm:ss"));
     }
@@ -119,30 +116,35 @@ export class GameComponent implements OnInit, OnDestroy {
       const nextState = cardOne.imageId === cardTwo.imageId ? 'matched' : 'default';
       cardOne.state = cardTwo.state = nextState;
       this.movimientos++;
-      console.log("Movimiento "+this.movimientos);
+      console.log("Movimiento " + this.movimientos);
       this.flippedCards = [];
 
       if (nextState === 'matched') {
         this.matchedCount++;
 
         if (this.matchedCount === this.cardImages.length) {
-          const dialogRef = this.dialog.open(RestartDialogComponent, {
+          const encuesta = this.dialog.open(PreguntasDialogComponent, {
             disableClose: true,
-            data: {datosJuego: this.datosJuego}
           });
-          clearInterval(this.intervalo);
-          this.datosJuego.movements = this.movimientos;
-          this.datosJuego.bad_movements = this.desaciertos;
-          this.datosJuego.end_at = moment(Date()).format("YYYY-MM-DD hh:mm:ss");
+          encuesta.afterClosed().subscribe(() => {
+            const dialogRef = this.dialog.open(RestartDialogComponent, {
+              disableClose: true,
+              data: { datosJuego: this.datosJuego }
+            });
+            clearInterval(this.intervalo);
+            this.datosJuego.movements = this.movimientos;
+            this.datosJuego.bad_movements = this.desaciertos;
+            this.datosJuego.end_at = moment(Date()).format("YYYY-MM-DD hh:mm:ss");
 
-          console.log(moment(Date()).format("YYYY-MM-DD hh:mm:ss"));
-          dialogRef.afterClosed().subscribe(() => {
-            this.restart();
-          });
+            console.log(moment(Date()).format("YYYY-MM-DD hh:mm:ss"));
+            dialogRef.afterClosed().subscribe(() => {
+              this.restart();
+            });
+          })
         }
-      }else{
+      } else {
         this.desaciertos++;
-        console.log("Fallo "+this.desaciertos);
+        console.log("Fallo " + this.desaciertos);
       }
 
     }, 1000);

@@ -36,4 +36,14 @@ export class AuthService {
   consultarToken(){
     this.token.next(sessionStorage.getItem('token'));
   }
+
+  obtenerPreguntas(){
+    const headers = new HttpHeaders( {'Authorization': `Bearer ${sessionStorage.getItem('token')}`} );
+    return this.http.get(`${this.url}/api/quiz/questions`,{headers: headers});
+  }
+
+  guardarPreguntas(respuestas: any){
+    const headers = new HttpHeaders( {'Authorization': `Bearer ${sessionStorage.getItem('token')}`} );
+    return this.http.post(`${this.url}/api/quiz/respond`, respuestas ,{headers: headers});
+  }
 }
