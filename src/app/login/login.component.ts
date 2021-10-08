@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
@@ -12,7 +12,7 @@ import { AuthService } from '../services/auth.service';
 export class LoginComponent implements OnInit {
 
   formularioRegistro: FormGroup;
-  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) { }
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router ) { }
 
   ngOnInit(): void {
     this.crearFormularioRegistro();
@@ -57,9 +57,9 @@ export class LoginComponent implements OnInit {
     Swal.showLoading()
     this.authService.registrarUsuario(this.formularioRegistro.value).subscribe((resp: any) => {
       sessionStorage.setItem('token', resp.access_token);
-      Swal.fire('Usuario creado correctamente', '', 'success').then(() => {
-        this.router.navigateByUrl('/juego');
-      });
+      Swal.close();
+      this.router.navigateByUrl('/juego');
+      // Swal.fire('Usuario creado correctamente', '', 'success');
     }, error => {
       console.log(error.error.errors);
       if(error.error.errors.cedula && error.error.errors.email){
