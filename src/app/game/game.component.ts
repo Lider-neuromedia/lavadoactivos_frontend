@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import Swal from 'sweetalert2';
 import { CardData } from '../card-data.model';
@@ -14,7 +14,7 @@ import { Memoria } from '../interfaces/memoria';
   templateUrl: './game.component.html',
   styleUrls: ['./game.component.scss']
 })
-export class GameComponent implements OnInit {
+export class GameComponent implements OnInit, OnDestroy {
 
   
   cardImages = [
@@ -58,8 +58,11 @@ export class GameComponent implements OnInit {
       .map(a => a[1]);
   }
 
-  constructor(private dialog: MatDialog, private authService: AuthService) {
+  constructor(private dialog: MatDialog) {
 
+  }
+  ngOnDestroy(): void {
+    sessionStorage.clear();
   }
 
   ngOnInit(): void {

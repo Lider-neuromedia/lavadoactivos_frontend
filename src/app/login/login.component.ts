@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
@@ -65,9 +65,9 @@ export class LoginComponent implements OnInit {
     Swal.showLoading()
     this.authService.registrarUsuario(this.formularioRegistro.value).subscribe((resp: any) => {
       sessionStorage.setItem('token', resp.access_token);
-      Swal.fire('Usuario creado correctamente', '', 'success').then(() => {
-        this.router.navigateByUrl('/juego');
-      });
+      Swal.close();
+      this.router.navigateByUrl('/juego');
+      // Swal.fire('Usuario creado correctamente', '', 'success');
     }, error => {
       console.log(error.error.errors);
       if(error.error.errors.cedula && error.error.errors.email){
