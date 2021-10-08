@@ -21,6 +21,84 @@ a:hover{
     border-color: none !important;
     border-color: #fff !important;
 }
+.cdk-overlay-pane{
+    background: rgb(111,43,213);
+    background: linear-gradient(0deg, rgba(111,43,213,1) 0%, rgba(8,15,71,1) 100%);
+    border-radius: 25px !important;
+    padding: 15px;
+    position: relative !important;
+    .closed{
+        position: absolute;
+        top: -2rem;
+        right: -2rem;
+        background: transparent;
+        box-shadow: none;
+        opacity: 1;
+        padding: 0;
+    }
+    .closed:focus{
+        outline: none !important;
+    }
+    .logo{
+        position: absolute;
+        bottom: 25rem;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 40%;
+    }
+    .p1-1{
+        position: absolute;
+        top: -3rem;
+        left: -3rem;
+    }
+    .p2-2{
+        position: absolute;
+        bottom: -2rem;
+        left: -2rem;
+    }
+    .p3-3{
+        position: absolute;
+        bottom: -12.5rem;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .p4-4{
+        position: absolute;
+        bottom: -2rem;
+        right: -2rem;
+    }
+    .mat-dialog-container{
+        box-shadow: none;
+        border: 6px dotted #fff !important;
+        border-radius: 25px !important;
+        background: transparent !important;
+        #popupVideo{
+            border-radius: 25px !important;
+            background: #000 !important;
+            padding: 15px;
+            .logo{
+                position: absolute;
+                bottom: 21rem;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 40%;
+            }
+        }
+        #popupGracias{
+            padding: 15px;
+            
+            .head_good{
+                width: 45%;
+            }
+            .head_bad{
+                width: 45%;
+            }
+        }
+        #popupPreguntas{
+            
+        }
+    }
+}
 .login-form{
     background: rgba(255,255,255,.2);
     padding: 50px;

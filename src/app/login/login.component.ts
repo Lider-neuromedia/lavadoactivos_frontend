@@ -1,8 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { AuthService } from '../services/auth.service';
+import { RestartDialogComponent } from '../restart-dialog/restart-dialog.component';
+import { VideoDialogComponent } from '../video-dialog/video-dialog.component';
+import { GraciasDialogComponent } from '../gracias-dialog/gracias-dialog.component';
+import { PreguntasDialogComponent } from '../preguntas-dialog/preguntas-dialog.component';
 
 @Component({
   selector: 'app-login',
@@ -12,9 +17,12 @@ import { AuthService } from '../services/auth.service';
 export class LoginComponent implements OnInit {
 
   formularioRegistro: FormGroup;
-  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) { }
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router, private dialog: MatDialog) { }
 
   ngOnInit(): void {
+    const dialogRef = this.dialog.open(PreguntasDialogComponent, {
+      disableClose: true,
+    });
     this.crearFormularioRegistro();
   }
 
