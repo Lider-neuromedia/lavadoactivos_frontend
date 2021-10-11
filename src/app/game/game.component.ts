@@ -132,8 +132,7 @@ export class GameComponent implements OnInit, OnDestroy {
             this.datosJuego.movements = this.movimientos;
             this.datosJuego.bad_movements = this.desaciertos;
             this.datosJuego.end_at = moment(Date()).format("YYYY-MM-DD hh:mm:ss");
-
-            console.log(moment(Date()).format("YYYY-MM-DD hh:mm:ss"));
+            this.guardarJuego();
           })
         }
       } else {
