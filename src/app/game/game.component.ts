@@ -9,6 +9,7 @@ import { AuthService } from '../services/auth.service';
 import * as moment from 'moment';
 import { Memoria } from '../interfaces/memoria';
 import { PreguntasDialogComponent } from '../preguntas-dialog/preguntas-dialog.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-game',
@@ -59,7 +60,7 @@ export class GameComponent implements OnInit, OnDestroy {
       .map(a => a[1]);
   }
 
-  constructor(private dialog: MatDialog) {
+  constructor(private dialog: MatDialog, private authService: AuthService, private router: Router) {
 
   }
   ngOnDestroy(): void {
@@ -127,19 +128,12 @@ export class GameComponent implements OnInit, OnDestroy {
             disableClose: true,
           });
           encuesta.afterClosed().subscribe(() => {
-            const dialogRef = this.dialog.open(RestartDialogComponent, {
-              disableClose: true,
-              data: { datosJuego: this.datosJuego }
-            });
             clearInterval(this.intervalo);
             this.datosJuego.movements = this.movimientos;
             this.datosJuego.bad_movements = this.desaciertos;
             this.datosJuego.end_at = moment(Date()).format("YYYY-MM-DD hh:mm:ss");
 
             console.log(moment(Date()).format("YYYY-MM-DD hh:mm:ss"));
-            dialogRef.afterClosed().subscribe(() => {
-              this.restart();
-            });
           })
         }
       } else {
@@ -149,7 +143,18 @@ export class GameComponent implements OnInit, OnDestroy {
 
     }, 1000);
   }
-
+  guardarJuego(){
+    this.authService.registrarEstadisiticas(this.datosJuego).subscribe(
+      (resp: any) => {
+        Swal.fire(resp.message, '', 'success').then(() => {
+          this.router.navigateByUrl('/login');
+        })
+      },
+      error => {
+        console.log(error);
+        Swal.fire(error.error.errors.message, '', 'error')
+      });
+  }
   restart(): void {
     this.matchedCount = 0;
     this.segundos = 0;

@@ -6,7 +6,7 @@
     <img src="./assets/popup/p-1.png" alt="p1-1" class="p1-1">
     <div mat-dialog-content>
         <mat-horizontal-stepper [linear]="true" #stepper>
-            <mat-step [stepControl]="formularioPregunta1">
+            <mat-step [stepControl]="formularioPregunta1" [editable]="esEditable">
                 <form [formGroup]="formularioPregunta1">
                     <div class="form-group">
                         <h1>{{ formularioPregunta1.get('pregunta').value }}</h1>
@@ -22,10 +22,10 @@
                     
                 </form>
                 <div>
-                    <button mat-button matStepperNext>Next</button>
+                    <button mat-button matStepperNext>Siguiente</button>
                 </div>
             </mat-step>
-            <mat-step [stepControl]="formularioPregunta2">
+            <mat-step [stepControl]="formularioPregunta2" [editable]="esEditable">
                 <form [formGroup]="formularioPregunta2">
                     <h1>{{ formularioPregunta2.get('pregunta').value }}</h1>
                     <ng-container *ngFor="let opcion of preguntas[1]?preguntas[1].options:''">
@@ -38,11 +38,10 @@
                     </ng-container>
                 </form>
                 <div>
-                    <button mat-button matStepperPrevious>Back</button>
-                    <button mat-button matStepperNext>Next</button>
+                    <button mat-button matStepperNext>Siguiente</button>
                 </div>
             </mat-step>
-            <mat-step [stepControl]="formularioPregunta3">
+            <mat-step [stepControl]="formularioPregunta3" [editable]="esEditable">
                 <form [formGroup]="formularioPregunta3">
                     <h1>{{ formularioPregunta3.get('pregunta').value }}</h1>
                     <ng-container *ngFor="let opcion of preguntas[2]?preguntas[2].options:''">
@@ -55,8 +54,7 @@
                     </ng-container>
                 </form>
                 <div>
-                    <button mat-button matStepperPrevious>Back</button>
-                    <button mat-button matStepperNext (click)="guardarRespuestas()">Next</button>
+                    <button mat-button matStepperNext (click)="guardarRespuestas()">Enviar</button>
                 </div>
             </mat-step>
             <mat-step>

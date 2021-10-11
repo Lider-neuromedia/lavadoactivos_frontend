@@ -13,6 +13,7 @@ export class PreguntasDialogComponent implements OnInit {
   formularioPregunta1: FormGroup;
   formularioPregunta2: FormGroup;
   formularioPregunta3: FormGroup;
+  esEditable: boolean = true;
   preguntas: any[] = [];
   answers: any = {
     answers: []
@@ -61,6 +62,7 @@ export class PreguntasDialogComponent implements OnInit {
   }
 
   guardarRespuestas(){
+    this.esEditable = false;
     let nombreFormularioGrupo: string = "formularioPregunta";
     this.preguntas.forEach((pregunta, index) => {
       this.answers.answers.push({
