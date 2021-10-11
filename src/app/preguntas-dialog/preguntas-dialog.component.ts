@@ -51,7 +51,8 @@ export class PreguntasDialogComponent implements OnInit {
     this.authService.obtenerPreguntas().subscribe((resp: any) => {
       console.log(resp.questions);
       this.preguntas = this.shuffleArray(resp.questions);
-      this.preguntas = this.preguntas.slice(0, 3);
+      this.preguntas = this.preguntas.slice(0, 1);
+      console.log(this.preguntas);
       this.preguntas.forEach((pregunta, index) => {
         this[nombreFormularioGrupo+(index+1)].controls['pregunta'].setValue(pregunta.description);
       })

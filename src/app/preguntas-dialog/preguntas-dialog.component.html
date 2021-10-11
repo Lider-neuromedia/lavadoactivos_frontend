@@ -22,38 +22,6 @@
                     
                 </form>
                 <div>
-                    <button mat-button matStepperNext>Siguiente</button>
-                </div>
-            </mat-step>
-            <mat-step [stepControl]="formularioPregunta2" [editable]="esEditable">
-                <form [formGroup]="formularioPregunta2">
-                    <h1>{{ formularioPregunta2.get('pregunta').value }}</h1>
-                    <ng-container *ngFor="let opcion of preguntas[1]?preguntas[1].options:''">
-                        <div class="form-check">
-                            <input class="form-check-input" formControlName="respuesta" name="respuesta" type="radio" id="exampleRadios1" [value]="opcion.id">
-                            <label class="form-check-label" for="exampleRadios1">
-                              {{ opcion.description }}
-                            </label>
-                        </div>
-                    </ng-container>
-                </form>
-                <div>
-                    <button mat-button matStepperNext>Siguiente</button>
-                </div>
-            </mat-step>
-            <mat-step [stepControl]="formularioPregunta3" [editable]="esEditable">
-                <form [formGroup]="formularioPregunta3">
-                    <h1>{{ formularioPregunta3.get('pregunta').value }}</h1>
-                    <ng-container *ngFor="let opcion of preguntas[2]?preguntas[2].options:''">
-                        <div class="form-check">
-                            <input class="form-check-input" formControlName="respuesta" name="respuesta" type="radio" id="exampleRadios1" [value]="opcion.id">
-                            <label class="form-check-label" for="exampleRadios1">
-                              {{ opcion.description }}
-                            </label>
-                        </div>
-                    </ng-container>
-                </form>
-                <div>
                     <button mat-button matStepperNext (click)="guardarRespuestas()">Enviar</button>
                 </div>
             </mat-step>
