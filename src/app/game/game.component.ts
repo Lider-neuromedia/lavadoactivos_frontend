@@ -54,6 +54,7 @@ export class GameComponent implements OnInit, OnDestroy {
     end_at: ''
   };
 
+
   shuffleArray(anArray: any[]): any[] {
     return anArray.map(a => [Math.random(), a])
       .sort((a, b) => a[0] - b[0])
@@ -71,6 +72,7 @@ export class GameComponent implements OnInit, OnDestroy {
     this.dialog.open(VideoDialogComponent);
     this.setupCards();
   }
+
 
   setupCards(): void {
     this.cards = [];

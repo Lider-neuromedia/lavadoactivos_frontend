@@ -5,17 +5,115 @@
 }
 html,
 body {
-    height: 100%;
+    height: 100% !important;
 }
 // body {
 //     font-family: "MuseoModerno", sans-serif;
 // }
+body.swal2-height-auto{
+    height: 100% !important;
+}
 h1, h2, h3, h4, h5, h6, span, label, a, small, div, input, textarea, select{
     font-family: 'MuseoModerno', cursive;
 }
 a:hover{
     text-decoration: none;
 }
+@keyframes jump1 {
+    0%{
+      transform: translateY(0%);
+    }
+    50%{
+      transform: translateY(-30px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+}
+@keyframes jump2 {
+    0%{
+      transform: translateY(0%);
+    }
+    60%{
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+}
+@keyframes jump3 {
+    0%{
+    transform: translateY(0%);
+    }
+    30%{
+    transform: translateY(-10px);
+    }
+    100% {
+    transform: translateY(0px);
+    }
+}
+@keyframes rotating {
+    from {
+      -ms-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -ms-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+}
+@keyframes top-right{
+    50% {
+        transform: translate(-10px,15px);
+    }
+}
+@keyframes top-left{
+    50% {
+        transform: translate(-10px,15px);
+    }
+}
+@keyframes left{
+    50% {
+        transform: translate(-10px,0px);
+    }
+}
+.left{
+    animation: left 8s ease-out infinite;
+}
+.top-right{
+    animation: top-left 3s ease-out infinite;
+}
+.top-left{
+    animation: top-left 3s ease-out infinite;
+}
+.bottom-right{
+    animation: bottom-right 3s ease-out infinite;
+}
+.bottom-left{
+    animation: bottom-left 3s ease-out infinite;
+}
+.circle{
+    -webkit-animation: circle 10s infinite linear;
+}
+.jump1{
+    animation: jump1 3s ease-out infinite;
+}
+.jump2{
+    animation: jump2 4s ease-out infinite;
+}
+.jump3{
+    animation: jump3 4s ease-out infinite;
+}
+.rotating{
+    animation: rotating 15s linear infinite;
+}
+
 .form-control:focus{
     box-shadow: none !important;
     border-color: none !important;
@@ -58,9 +156,10 @@ a:hover{
     }
     .p3-3{
         position: absolute;
-        bottom: -12.5rem;
+        bottom: -9rem;
         left: 50%;
         transform: translate(-50%, -50%);
+        width: 15%;
     }
     .p4-4{
         position: absolute;
@@ -78,10 +177,10 @@ a:hover{
             padding: 15px;
             .logo{
                 position: absolute;
-                bottom: 21rem;
+                top: -10%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                width: 40%;
+                width: 26%;
             }
         }
         #popupGracias{
@@ -99,6 +198,7 @@ a:hover{
         }
     }
 }
+
 .login-form{
     background: rgba(255,255,255,.2);
     padding: 50px;
@@ -115,6 +215,8 @@ a:hover{
             color: #154da4;
             font-weight: 900;
             font-size: 3rem;
+            z-index: 1;
+            text-shadow: 2px 2px 0px rgb(255 255 255);
         }
     }
     input, select{
@@ -687,13 +789,13 @@ a:hover{
         }
         .p-4{
             top: 6%;
-            left: 52%;
+            left: 48%;
             transform: translate(-50%, -50%);
             width: 10%;
         }
         .p-5{
             top: 20%;
-            left: 46%;
+            left: 35%;
             transform: translate(-50%, -50%);
             width: 16%;
         }
@@ -1112,6 +1214,14 @@ a:hover{
     .container-circle{
         margin: -10rem auto 15px auto;
     }
+    #popupGracias{        
+        .head_good{
+            width: 45%;
+        }
+        .head_bad{
+            width: 45%;
+        }
+    }
 }
 @media (min-width: 1920px){
     .juego{
@@ -1188,7 +1298,7 @@ a:hover{
         }
         .pe-8{
             position: absolute;
-            top: 17rem;
+            top: 19rem;
             right: 58rem;
             transform: translate(-0%, -0%);
             width: 3%;
@@ -1284,13 +1394,13 @@ a:hover{
         }
         .p-4{
             top: 6%;
-            left: 52%;
+            left: 49%;
             transform: translate(-50%, -50%);
             width: 7%;
         }
         .p-5{
             top: 20%;
-            left: 46%;
+            left: 40%;
             transform: translate(-50%, -50%);
             width: 12%;
         }
@@ -1319,7 +1429,7 @@ a:hover{
         }
         .m-1{
             top: 16rem;
-            right: 1rem;
+            right: 3rem;
             width: 6%;
         }
         .m-2{
@@ -1351,6 +1461,7 @@ a:hover{
             position: absolute;
             left: -4rem;
             top: -12rem;
+            z-index: 0;
         }
     }
     .login-main-text{
