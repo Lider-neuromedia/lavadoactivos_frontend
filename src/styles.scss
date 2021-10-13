@@ -119,6 +119,10 @@ a:hover{
     border-color: none !important;
     border-color: #fff !important;
 }
+.btn-enviar{
+    background: rgb(111,43,213);
+    color: #fff;
+}
 .cdk-overlay-pane{
     background: rgb(111,43,213);
     background: linear-gradient(0deg, rgba(111,43,213,1) 0%, rgba(8,15,71,1) 100%);
@@ -177,22 +181,13 @@ a:hover{
             padding: 15px;
             .logo{
                 position: absolute;
-                top: -10%;
+                top: -14%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                width: 26%;
+                width: 65%;
             }
         }
-        #popupGracias{
-            padding: 15px;
-            
-            .head_good{
-                width: 45%;
-            }
-            .head_bad{
-                width: 45%;
-            }
-        }
+        
         #popupPreguntas{
             
         }
@@ -1224,6 +1219,17 @@ a:hover{
     }
 }
 @media (min-width: 1920px){
+    .gracias{
+        width: 58%;
+    }
+    #popupPreguntas{        
+        .head_good{
+            width: 38%;
+        }
+        .head_bad{
+            width: 38%;
+        }
+    }
     .juego{
         .grid{
             z-index: 2;
@@ -1369,7 +1375,7 @@ a:hover{
     }
     .juego{
         .logo{
-            width: 25%;
+            width: 40%;
         }
         .titulo{
             width: 60%;
