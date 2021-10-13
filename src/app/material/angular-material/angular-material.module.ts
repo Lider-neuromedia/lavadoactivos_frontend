@@ -4,7 +4,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatStepperModule } from '@angular/material/stepper';
 
 
 @NgModule({
@@ -15,13 +14,11 @@ import { MatStepperModule } from '@angular/material/stepper';
     MatButtonModule,
     MatIconModule,
     MatDialogModule,
-    MatStepperModule
   ],exports: [
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
     MatDialogModule,
-    MatStepperModule
   ]
 })
 export class AngularMaterialModule { }

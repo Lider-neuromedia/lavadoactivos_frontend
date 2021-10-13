@@ -10,6 +10,7 @@ import * as moment from 'moment';
 import { Memoria } from '../interfaces/memoria';
 import { PreguntasDialogComponent } from '../preguntas-dialog/preguntas-dialog.component';
 import { Router } from '@angular/router';
+import { GraciasDialogComponent } from '../gracias-dialog/gracias-dialog.component';
 
 @Component({
   selector: 'app-game',
@@ -147,9 +148,13 @@ export class GameComponent implements OnInit, OnDestroy {
   guardarJuego(){
     this.authService.registrarEstadisiticas(this.datosJuego).subscribe(
       (resp: any) => {
-        Swal.fire(resp.message, '', 'success').then(() => {
-          this.router.navigateByUrl('/login');
+        let gracias = this.dialog.open(GraciasDialogComponent, {
+          disableClose: true
         })
+        gracias.afterClosed().subscribe(() => {
+            this.router.navigateByUrl('/login');
+        })
+        
       },
       error => {
         console.log(error);

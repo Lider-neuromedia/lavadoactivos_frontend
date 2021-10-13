@@ -5,35 +5,31 @@
     </button>
     <img src="./assets/popup/p-1.png" alt="p1-1" class="p1-1">
     <div mat-dialog-content>
-        <mat-horizontal-stepper [linear]="true" #stepper>
-            <mat-step [stepControl]="formularioPregunta1" [editable]="esEditable">
-                <form [formGroup]="formularioPregunta1">
-                    <div class="form-group">
-                        <h1>{{ formularioPregunta1.get('pregunta').value }}</h1>
-                        <ng-container *ngFor="let opcion of preguntas[0]?preguntas[0].options:''">
-                        <div class="form-check">
-                            <input class="form-check-input" formControlName="respuesta" name="respuesta" type="radio" id="exampleRadios1" [value]="opcion.id">
-                            <label class="form-check-label" for="exampleRadios1">
-                              {{ opcion.description }}
-                            </label>
-                        </div>
-                    </ng-container>
+        <form (ngSubmit)="guardarRespuestas()" [formGroup]="formularioPregunta1">
+            <div class="form-group">
+                <h1>{{ formularioPregunta1.get('pregunta').value }}</h1>
+                <ng-container *ngFor="let opcion of preguntas[0]?preguntas[0].options:''">
+                    <div class="form-check">
+                        <input class="form-check-input" formControlName="respuesta" name="respuesta" type="radio"
+                            id="exampleRadios1" [value]="opcion.id">
+                        <label class="form-check-label" for="exampleRadios1">
+                            {{ opcion.description }}
+                        </label>
                     </div>
-                    
-                </form>
-                <div>
-                    <button mat-button matStepperNext (click)="guardarRespuestas()">Enviar</button>
-                </div>
-            </mat-step>
-            <mat-step>
-                <p class="text-center">
-            <img src="./assets/popup/gracias.png" alt="">
-        </p>
-        <div class="d-flex justify-content-center align-items-center">
-            <img src="./assets/popup/head_good.png" alt="" class="px-5 head_good">
-            <img src="./assets/popup/head_bad.png" alt="" class="px-5 head_bad">
-        </div>
-            </mat-step>
-        </mat-horizontal-stepper>
+                </ng-container>
+            </div>
+            <div>
+                <button mat-button mat-dialog-close type="submit">Enviar</button>
+            </div>
+        </form>
+        <!-- <div id="popupPreguntas">
+                    <p class="text-center">
+                        <img src="./assets/popup/gracias.png" alt="">
+                    </p>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <img src="./assets/popup/head_good.png" alt="" class="px-5 head_good">
+                        <img src="./assets/popup/head_bad.png" alt="" class="px-5 head_bad">
+                    </div>
+              </div> -->
     </div>
 </div>
