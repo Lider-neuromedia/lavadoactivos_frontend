@@ -119,9 +119,21 @@ a:hover{
     border-color: none !important;
     border-color: #fff !important;
 }
+.ver_video{
+    cursor: pointer;
+}
 .btn-enviar{
     background: rgb(111,43,213);
     color: #fff;
+}
+.gracias{
+    width: 50%;
+}
+.head_bad{
+    width: 35%;
+}
+.head_good{
+    width: 35%;
 }
 .cdk-overlay-pane{
     background: rgb(111,43,213);
@@ -1219,9 +1231,6 @@ a:hover{
     }
 }
 @media (min-width: 1920px){
-    .gracias{
-        width: 58%;
-    }
     #popupPreguntas{        
         .head_good{
             width: 38%;

@@ -4,6 +4,7 @@
       </mat-toolbar> -->
       <div class="d-flex justify-content-center align-items-center flex-column">
         <img src="./assets/juego/titulo.png" alt="titulo" class="titulo">
+        <img (click)="verVideo()" src="./assets/juego/ver_video.png" alt="titulo" class="titulo ver_video">
         <div class="grid pb-2">
           <app-game-card *ngFor="let c of cards; let idx=index" [data]="c" (cardClicked)="cardClicked(idx)">
           </app-game-card>
