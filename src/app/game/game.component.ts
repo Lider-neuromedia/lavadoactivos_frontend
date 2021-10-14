@@ -19,18 +19,14 @@ export class GameComponent implements OnInit, OnDestroy {
 
 
   cardImages = [
-    'imagen1.jpg',
-    'imagen2.jpg',
-    'imagen3.jpg',
-    'imagen4.jpg',
-    'imagen5.jpg',
-    'imagen1.jpg',
-    'imagen2.jpg',
-    'imagen3.jpg',
-    'imagen4.jpg',
-    'imagen5.jpg',
-    'imagen3.jpg',
-    'imagen4.jpg',
+    '1.png',
+    '2.png',
+    '3.png',
+    '4.png',
+    '5.png',
+    '6.png',
+    '7.png',
+    '8.png',
   ];
 
   cards: CardData[] = [];
@@ -72,6 +68,9 @@ export class GameComponent implements OnInit, OnDestroy {
     this.setupCards();
   }
 
+  verVideo(): void{
+    this.dialog.open(VideoDialogComponent);
+  }
 
   setupCards(): void {
     this.cards = [];
