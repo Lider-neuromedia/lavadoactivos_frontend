@@ -1,5 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
 
+input[type=number] { -moz-appearance:textfield; }
 .fa,.fas,.far,.fal,.fab {
     font-family: "Font Awesome 5 Free";
 }

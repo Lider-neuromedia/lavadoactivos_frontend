@@ -25,7 +25,7 @@
                         <div class="input-group-prepend">
                         <div class="input-group-text"><i class="far fa-address-card"></i></div>
                         </div>
-                        <input type="text" class="form-control" id="inlineFormInputGroup" [class.is-invalid]="Cedula" formControlName="cedula" placeholder="Número de cédula">
+                        <input type="text" (keyup)="soloNumeros('cedula')" class="form-control" id="cedula" [class.is-invalid]="Cedula" formControlName="cedula" placeholder="Número de cédula">
                     </div>
                     <label class="sr-only" name="nombre" for="inlineFormInputGroup">Nombre completo</label>
                     <div class="input-group mb-2">
@@ -46,7 +46,7 @@
                         <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-mobile-alt"></i></div>
                         </div>
-                        <input type="text" name="celular" class="form-control" id="inlineFormInputGroup" [class.is-invalid]="Celular" formControlName="celular" placeholder="Celular">
+                        <input type="text" name="celular" (keyup)="soloNumeros('celular')" class="form-control" id="celular" [class.is-invalid]="Celular" formControlName="celular" placeholder="Celular">
                     </div>
                     <label class="sr-only" for="inlineFormInputGroup">Tipo</label>
                     <div class="input-group mb-2">

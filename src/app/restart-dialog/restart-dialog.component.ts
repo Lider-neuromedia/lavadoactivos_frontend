@@ -18,7 +18,6 @@ export class RestartDialogComponent implements OnInit {
     this.authService.registrarEstadisiticas(this.data.datosJuego).subscribe(
       (resp: any) => this.mensaje = resp.message,
       error => {
-        console.log(error);
         Swal.fire(error.error.errors.message, '', 'error')
       });
   }

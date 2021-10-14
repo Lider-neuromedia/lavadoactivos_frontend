@@ -1,8 +1,5 @@
 <div id="popupPreguntas">
     <img src="./assets/logo_gracias.png" alt="logo" class="logo">
-    <button mat-raised-button color="primary" class="closed" mat-dialog-close>
-        <img src="./assets/popup/close.png" alt="" class="gracias">
-    </button>
     <img src="./assets/popup/p-1.png" alt="p1-1" class="p1-1">
     <div mat-dialog-content>
         <form (ngSubmit)="guardarRespuestas()" [formGroup]="formularioPregunta1">
@@ -11,15 +8,15 @@
                 <ng-container *ngFor="let opcion of preguntas[0]?preguntas[0].options:''">
                     <div class="form-check">
                         <input class="form-check-input" formControlName="respuesta" name="respuesta" type="radio"
-                            id="exampleRadios1" [value]="opcion.id">
-                        <label class="form-check-label" for="exampleRadios1">
+                            [value]="opcion.id">
+                        <label class="form-check-label">
                             {{ opcion.description }}
                         </label>
                     </div>
                 </ng-container>
             </div>
             <div>
-                <button mat-raised-button mat-dialog-close type="submit">Enviar</button>
+                <button mat-raised-button type="submit">Enviar</button>
             </div>
         </form>
     </div>

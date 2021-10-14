@@ -49,6 +49,8 @@ export class GameComponent implements OnInit, OnDestroy {
     end_at: ''
   };
 
+  
+
 
   shuffleArray(anArray: any[]): any[] {
     return anArray.map(a => [Math.random(), a])
@@ -64,12 +66,14 @@ export class GameComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.dialog.open(VideoDialogComponent);
+    this.verVideo();
     this.setupCards();
   }
 
   verVideo(): void{
-    this.dialog.open(VideoDialogComponent);
+    this.dialog.open(VideoDialogComponent, {
+      disableClose: true
+    });
   }
 
   setupCards(): void {
@@ -93,7 +97,6 @@ export class GameComponent implements OnInit, OnDestroy {
     this.validadorTiempo++;
     if (this.validadorTiempo === 1) {
       this.datosJuego.start_at = moment(Date()).format("YYYY-MM-DD hh:mm:ss");
-      console.log(moment(Date()).format("YYYY-MM-DD hh:mm:ss"));
     }
     if (cardInfo.state === 'default' && this.flippedCards.length < 2) {
       cardInfo.state = 'flipped';
@@ -117,7 +120,6 @@ export class GameComponent implements OnInit, OnDestroy {
       const nextState = cardOne.imageId === cardTwo.imageId ? 'matched' : 'default';
       cardOne.state = cardTwo.state = nextState;
       this.movimientos++;
-      console.log("Movimiento " + this.movimientos);
       this.flippedCards = [];
 
       if (nextState === 'matched') {
@@ -137,7 +139,6 @@ export class GameComponent implements OnInit, OnDestroy {
         }
       } else {
         this.desaciertos++;
-        console.log("Fallo " + this.desaciertos);
       }
 
     }, 1000);
@@ -154,7 +155,6 @@ export class GameComponent implements OnInit, OnDestroy {
         
       },
       error => {
-        console.log(error);
         Swal.fire(error.error.errors.message, '', 'error')
       });
   }

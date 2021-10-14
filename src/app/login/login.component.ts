@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { AuthService } from '../services/auth.service';
+declare var $: any;
 
 @Component({
   selector: 'app-login',
@@ -20,14 +21,22 @@ export class LoginComponent implements OnInit {
 
   crearFormularioRegistro(){
     this.formularioRegistro = this.fb.group({
-      cedula: ['', [Validators.required, Validators.maxLength(11)]],
+      cedula: ['', [Validators.required, Validators.minLength(7), Validators.maxLength(10)]],
       nombre: ['', [Validators.required, Validators.maxLength(40), Validators.minLength(3)]],
       email: ['', [Validators.email, Validators.required]],
-      celular: ['', [Validators.required, Validators.minLength(7), Validators.maxLength(11)]],
+      celular: ['', [Validators.required, Validators.minLength(7), Validators.maxLength(10)]],
       tipo: ['', [Validators.required]],
       password: [''],
       password_confirmation: ['']
     })
+  }
+
+  soloNumeros(id: string){
+		$(document).ready(function(){
+			$(`#${id}`).on('input', function (evt) {
+				$(this).val($(this).val().replace(/[^0-9]/g, ''));
+			});
+		});
   }
 
   get Cedula(){
@@ -48,20 +57,29 @@ export class LoginComponent implements OnInit {
 
   guardarRegistro(){
     if(this.formularioRegistro.invalid){
+      if(this.formularioRegistro.get('cedula').errors?.minlength){
+        Swal.fire("Longitud minima de la cédula es de "+this.formularioRegistro.get('cedula').errors.minlength.requiredLength+" caracteres", '', 'warning');
+      }
+      if(this.formularioRegistro.get('cedula').errors?.maxlength){
+        Swal.fire("Longitud máxima de la cédula es de "+this.formularioRegistro.get('cedula').errors.maxlength.requiredLength+" caracteres", '', 'warning');
+      }
+      if(this.formularioRegistro.get('celular').errors?.minlength){
+        Swal.fire("Longitud minima de la celular es de "+this.formularioRegistro.get('celular').errors.minlength.requiredLength+" caracteres", '', 'warning');
+      }
+      if(this.formularioRegistro.get('celular').errors?.maxlength){
+        Swal.fire("Longitud máxima de la celular es de "+this.formularioRegistro.get('celular').errors.maxlength.requiredLength+" caracteres", '', 'warning');
+      }
       return Object.values( this.formularioRegistro.controls ).forEach(control => control.markAsTouched());
     }
     this.formularioRegistro.controls['password'].setValue(this.formularioRegistro.get('cedula').value);
     this.formularioRegistro.controls['password_confirmation'].setValue(this.formularioRegistro.get('cedula').value);
-    console.log(this.formularioRegistro.value);
     Swal.fire('Validando información', 'Espere un momento...', 'info');
     Swal.showLoading()
     this.authService.registrarUsuario(this.formularioRegistro.value).subscribe((resp: any) => {
       sessionStorage.setItem('token', resp.access_token);
       Swal.close();
       this.router.navigateByUrl('/juego');
-      // Swal.fire('Usuario creado correctamente', '', 'success');
     }, error => {
-      console.log(error.error.errors);
       if(error.error.errors.cedula && error.error.errors.email){
         Swal.fire('La cédula y el correo ya se encuentra registrada', '', 'error');
       }else if(error.error.errors.cedula){
