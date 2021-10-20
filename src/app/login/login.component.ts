@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
       email: ['', [Validators.email, Validators.required]],
       celular: ['', [Validators.required, Validators.minLength(7), Validators.maxLength(10)]],
       tipo: ['', [Validators.required]],
+      acepto: [false, [Validators.required]],
       password: [''],
       password_confirmation: ['']
     })
@@ -54,6 +55,9 @@ export class LoginComponent implements OnInit {
   get Tipo(){
     return this.formularioRegistro.get('tipo').invalid && this.formularioRegistro.get('tipo').touched;
   }
+  get Acepto(){
+    return this.formularioRegistro.get('acepto').invalid && this.formularioRegistro.get('acepto').touched && !this.formularioRegistro.get('acepto').value;
+  }
 
   guardarRegistro(){
     if(this.formularioRegistro.invalid){
@@ -70,6 +74,10 @@ export class LoginComponent implements OnInit {
         Swal.fire("Longitud máxima de la celular es de "+this.formularioRegistro.get('celular').errors.maxlength.requiredLength+" caracteres", '', 'warning');
       }
       return Object.values( this.formularioRegistro.controls ).forEach(control => control.markAsTouched());
+    }
+    if(!this.formularioRegistro.get('acepto').value){
+      Swal.fire('Debes aceptar las politicas de privacidad','','warning');
+      return;
     }
     this.formularioRegistro.controls['password'].setValue(this.formularioRegistro.get('cedula').value);
     this.formularioRegistro.controls['password_confirmation'].setValue(this.formularioRegistro.get('cedula').value);

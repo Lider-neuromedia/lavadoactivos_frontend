@@ -70,13 +70,11 @@ export class PreguntasDialogComponent implements OnInit {
       })
   })
     this.authService.guardarPreguntas(this.answers).subscribe((resp: any) => {
-      console.log(resp);
       this.answers.answers.pop();
       this.dialogRef.close();
     }, error => {
       this.answers.answers.pop();
       Swal.fire('Debe seleccionar una opción', '', 'error');
-      console.log(error);
     })
   }
 }
