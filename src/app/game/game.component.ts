@@ -9,6 +9,7 @@ import { Memoria } from '../interfaces/memoria';
 import { PreguntasDialogComponent } from '../preguntas-dialog/preguntas-dialog.component';
 import { Router } from '@angular/router';
 import { GraciasDialogComponent } from '../gracias-dialog/gracias-dialog.component';
+import { DialogInicioComponent } from '../dialog-inicio/dialog-inicio.component';
 
 @Component({
   selector: 'app-game',
@@ -48,7 +49,7 @@ export class GameComponent implements OnInit, OnDestroy {
     start_at: '',
     end_at: ''
   };
-
+cerrarVideo: any;
   
 
 
@@ -71,9 +72,14 @@ export class GameComponent implements OnInit, OnDestroy {
   }
 
   verVideo(): void{
-    this.dialog.open(VideoDialogComponent, {
+    let cerrarVideo = this.dialog.open(VideoDialogComponent, {
       disableClose: true
     });
+    cerrarVideo.afterClosed().subscribe(() => {
+      this.dialog.open(DialogInicioComponent, {
+        disableClose: true
+      })
+    })
   }
 
   setupCards(): void {

@@ -15,6 +15,7 @@ import { PopupVideoComponent } from './popup-video/popup-video.component';
 import { VideoDialogComponent } from './video-dialog/video-dialog.component';
 import { GraciasDialogComponent } from './gracias-dialog/gracias-dialog.component';
 import { PreguntasDialogComponent } from './preguntas-dialog/preguntas-dialog.component';
+import { DialogInicioComponent } from './dialog-inicio/dialog-inicio.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { PreguntasDialogComponent } from './preguntas-dialog/preguntas-dialog.co
     VideoDialogComponent,
     GraciasDialogComponent,
     PreguntasDialogComponent,
+    DialogInicioComponent,
   ],
   imports: [
     BrowserModule,
